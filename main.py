@@ -1,5 +1,6 @@
 import subprocess
 import time
+import json
 
 def go():
   start = time.time()
@@ -15,14 +16,18 @@ def js():
 
   return round(elapse * 1000)
 
-go_times = []
-js_times = []
+data = {
+  "go": [],
+  "js": []
+}
 
-for i in range(1):
-  js_times.append(js())
+for i in range(50):
+  data['js'].append(js())
 
-for i in range(1): 
-  go_times.append(go())
+for i in range(50): 
+  data['go'].append(go())
 
-print("NodeJS:", js_times)
-print("Golang:", go_times)
+print(data)
+
+with open('performance.json', 'w') as f:
+    json.dump(data, f, ensure_ascii=False, indent=4)
