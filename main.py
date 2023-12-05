@@ -21,13 +21,18 @@ data = {
   "js": []
 }
 
-for i in range(50):
+s = time.time()
+
+for i in range(100):
   data['js'].append(js())
 
-for i in range(50): 
+for i in range(100): 
   data['go'].append(go())
 
-print(data)
+e = round(time.time() - s * 1000)
 
-with open('performance.json', 'w') as f:
+print(data)
+print("total time:", e)
+
+with open('out/performance.json', 'w') as f:
     json.dump(data, f, ensure_ascii=False, indent=4)
