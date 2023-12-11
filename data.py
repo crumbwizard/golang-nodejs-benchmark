@@ -1,5 +1,6 @@
 import json
 import statistics
+import math
 
 def collect_stats(data):
   # MIN, Q1, MED, Q2, MAX, RANGE, IQR, STD_DEV, MEAN, OUTLIERS
@@ -17,6 +18,10 @@ def calc(data, population):
   
 
   sum = 0
+
+  dev_sum = 0
+
+
   stats = {
     "MIN": data_set[0],
     "Q1": q[0],
@@ -45,8 +50,12 @@ def calc(data, population):
 
     sum += point
 
+  for point in data_set:
+    dev_sum += ((point - (sum / len(data_set)))) ** 2
+
   stats["RANGE"] = stats["MAX"] - stats["MIN"]
   stats["MEAN"] = sum / len(data_set)
+  stats["STDEV"] = math.sqrt(dev_sum / 99)
 
   return stats
     

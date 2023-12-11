@@ -24,6 +24,6 @@ while (i < 100_000) {
 ```
 
 ## Results
-As expected Go was faster than Javascript, with a mean and median of 3713ms and 3542ms compared to 5001ms and 4964ms making Golang on average 1288ms faster than Javascript. Go was also less consistent, with an IQR of 93.5ms compared to 39.75ms, and a range of 15725ms compared to 563ms. At the start of the test Go had a major outlier of 19146ms. The test took a total of 1743.124 seconds or almost 30 minutes to run.
+As expected Go was faster than Javascript, with a mean and median of 3713ms and 3542ms compared to 5001ms and 4964ms making Golang on average 1288ms faster than Javascript for this test. Go was also less consistent, with an IQR of 93.5ms compared to 39.75ms, and a range of 15725ms compared to 563ms. At the start of the test Go had a major outlier of 19146ms. The test took a total of 1743.124 seconds or almost 30 minutes to run.
 
 ![Runtime Graph](graph.png)
