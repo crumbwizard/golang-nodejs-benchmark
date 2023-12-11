@@ -3,7 +3,7 @@ import statistics
 import math
 
 def collect_stats(data):
-  # MIN, Q1, MED, Q2, MAX, RANGE, IQR, STD_DEV, MEAN, OUTLIERS
+  # MIN, Q1, MED, Q2, MAX, RANGE, IQR, STDEV, MEAN, OUTLIERS
   stats = {
     "go": calc(data, "go"),
     "js": calc(data, "js")
